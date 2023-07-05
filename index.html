@@ -6,9 +6,7 @@
 
         body {
             background-color: #1a1a1a;
-            background-image: radial-gradient(
-    rgba(255, 10, 214, 0.75), black 80%
-  );
+            background-image: radial-gradient(rgba(255, 10, 214, 0.75), black 80%);
             padding: 0;
             margin: 0;
             display: flex;
@@ -31,17 +29,18 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         #terminal::after {
-            content: ''; /* Insertion point character */
+            content: '_'; /* Insertion point character */
             position: absolute;
             height: 1.2em; /* Adjust this value to match your font size */
             line-height: 1.2em; /* Adjust this value to match your font size */
             background-color: #FF00FF; /* Same color as the text */
             color: #000000; /* Color of the insertion point character */
-            font-size: 1em; /* Adjust this value to match your font size */
-            padding: 0 4px; /* Adjust padding as needed */
+            font-size: 1.2em; /* Adjust this value to match your font size */
+            padding: 0 2px; /* Adjust padding as needed */
             animation: cursor-blink 1s infinite;
+            box-shadow: 0 0 8px 2px #FF00FF; /* Adjust glow size and color */
         }
 
         @keyframes cursor-blink {
@@ -64,18 +63,20 @@
             width: 100%;
             height: 100%;
             background: repeating-linear-gradient(
-              0deg,
-              rgba(255,255,255,0.03),
-              rgba(255,255,255,0.03) 1px,
-              transparent 1px,
-              transparent 2px
+                0deg,
+                rgba(255, 255, 255, 0.03),
+                rgba(255, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
             );
             animation: noise 0.2s infinite linear;
-        } 
-        @keyframes noise {
-            to { background-position: 100% 100%; }
         }
 
+        @keyframes noise {
+            to {
+                background-position: 100% 100%;
+            }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
