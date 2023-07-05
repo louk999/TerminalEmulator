@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
-    
-            body {
-                background-color: black;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-family: 'Source Code Pro', monospace;
-                font-size: 1.2em;
-            }
-            #terminal {
-                background-color: rgba(0, 0, 0, 0.8);
-                padding: 20px;
-                width: 70%;
-                min-height: 70%;
-                border: solid 2px #62ff53;
-                color: #31f137; /* Neon pink/purple */
-                text-shadow: 0 0 10px #70fe4d, 0 0 20px #18fe4d, 0 0 30px #FF00FF, 0 0 40px #FF00FF;
-            }
-        </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
-    </head>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        body {
+            background-color: #1a1a1a; /* Off-black color */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1.2em;
+            overflow: hidden;
+        }
+        #terminal {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 70%;
+            min-height: 70%;
+            border: solid 2px #FF00FF;
+            color: #FF00FF; /* Neon pink/purple */
+            text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF;
+            position: relative;
+            overflow: hidden;
+        }
+        #noise {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+              0deg,
+              rgba(255,255,255,0.03),
+              rgba(255,255,255,0.03) 1px,
+              transparent 1px,
+              transparent 2px
+            );
+            animation: noise 0.2s infinite linear;
+        }
+        @keyframes noise {
+            to { background-position: 100% 100%; }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+</head>
 <body>
     <div id="terminal"></div>
+    <div id="noise"></div>
     <script>
         var typed = new Typed('#terminal', {
             strings: ["Dear Patrons,^1000\n\nFrom the dimly lit corners of our beloved CocktailBar, we're putting pen to paper to give you a bit of an overdue recap. There's a lot to unpack, so grab a glass and settle in.^1000\n\nOur story began back in 2020, amidst the thunderous rumble of the DeFi boom. CocktailBar was initially conceived as a playful frolic amongst the new wave of financial memes. Yet, somewhere along the way, we realized we were not just stirring another meme into existence, but brewing a much more potent narrative. It was clear to us, even then, that we were on the brink of something bigger.^1000\n\nEver since, we've been eager to leap headfirst into the intoxicating world of gaming and NFTs. In an attempt to honor our original promises, we focused on developing COC and liquidity staking. What was initially meant to be a three-token farm quickly whittled down to one – our trusty Mojito, a simpler alternative, or so we thought.^1000\n\nDuring the unfolding of this chapter, we stumbled upon some glitches in our code. These inconsistencies led to disproportionate distribution of Mojito staking rewards, allowing some folks to claim more than their due share. This hiccup threw our staking logic off balance and showed us the volatile nature of this emerging world. We were still learning to navigate the treacherous currents of crypto-space, and as the saying goes, we live, and we learn.^1000\n\nDuring our hiatus, we wanted to give something back to our faithful community. Enter Peanuts, another light-hearted meme coin with simple mechanics. However, this venture too came with its share of hiccups and challenges, including an oversight in our contract and internal disagreements.^1000\n\nTaking lessons from these trials and tribulations, we decided to step back and realign our vision. We realized that what truly excited us, and what we had always wanted to do, lay in the vibrant realms of gaming and NFTs. We had always dreamt of transitioning CocktailBar into the Metaverse, and after seven months of silence, we finally made a headway into Phase One.^1000\n\nAround this time, we were approached by a representative who promised assistance with an online casino, offering recurring payouts to our token holders. However, over time, this narrative began overshadowing our other endeavors. Miscommunications ensued, promises were not met, and the situation left us dealing with a disappointed community and a vanishing partner.^1000\n\nIn spite of the setbacks, we rang in the New Year of 2022 in a distinctive fashion - by launching our VR Metaverse. While this virtual celebration was a success and sparked renewed enthusiasm within our community, the hangover of the casino saga persisted.^1000\n\nWe found ourselves in a pickle. How do we offer a rewarding experience to our token holders, continue doing what we truly love, and ensure a sustainable future for CocktailBar? And then, like a light at the end of a dark tunnel, emerged Metahunt.^1000\n\nAs we embark on this new journey, our commitment to you, our community, remains unwavering. Our mission with Metahunt is to create a platform that caters to everyone's needs while driving towards a sustainable future.^1000\n\nWe are determined to bring you engaging gaming experiences, promising NFT collections, and compelling opportunities to earn. We're working diligently on staking mechanisms for both MHNT and COC tokens that would provide our early supporters with a way to earn rewards. In addition, we're exploring how our ecosystem can continue to evolve and adapt, providing a breeding ground for further growth and new projects.^1000\n\nOur promise to you is transparency. We'll keep you updated about our plans, our progress, and our setbacks (because yes, there will be setbacks). This journey will be a roller coaster, filled with twists and turns, highs and lows, but one we promise to take together. We aren’t planning on leaving any time soon; in fact, we're just getting started.^1000\n\nAs we journey forward, we hope to learn from the past, focusing on delivering products and experiences that exceed expectations. We plan to make the staking experience rewarding and fulfilling, ensuring that all token holders can enjoy the benefits of their contributions.^1000\n\nMoreover, we intend to build more exciting projects under the umbrella of CocktailBar, transforming it into a parent entity that fosters creativity and innovation. Think of it as a hub of eclectic, enticing ventures; a concoction of various unique flavours, each adding a distinctive note to the overall taste.^1000\n\nThe rebranding and removal of CocktailBar's liquidity are no longer on the table. We've heard your concerns and decided to take a different route. We will be utilizing everything at our disposal to ensure the growth and maintenance of our ecosystem, whether that includes development funds, Peanut tokens, or more.^1000\n\nThe journey ahead won't be easy, but it will be worth it. We’re talking about late nights, early mornings, and a few too many cups of coffee. We'll strive to make our platform not only entertaining and engaging but also a place where everyone feels valued and heard.^1000\n\nRemember, every great story has a bit of drama and a lot of action, Ours has been no different, and moving forward, we promise to continue writing this tale together with you, one chapter at a time.^1000\n\nIn essence, we're shifting gears but not losing our essence. CocktailBar remains a testament to community, creativity, and the spirit of innovation. It continues to be a space for people to come together, celebrate their shared interests, and contribute to a collective vision.^1000\n\nSo, as we say in CocktailBar, the night is young and full of possibilities. Let's toast to the past, drink to the present, and raise a glass to the exciting journey that awaits us.^1000\n\nWe thank you for being a part of this journey, and we can't wait to see where this adventure takes us. Here's to a future filled with curiosity, exploration, and yes, plenty of cocktails.^1000\n\nYours in good spirits,^1000\n\nMr. Martini"],
