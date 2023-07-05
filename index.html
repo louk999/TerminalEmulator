@@ -5,7 +5,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         body {
-            background-color: #1a1a1a; /* Off-black color */
+            background-color: black;
+            background-image: radial-gradient(
+    rgba(255, 10, 214, 0.75), black 80%
+  );
             padding: 0;
             margin: 0;
             display: flex;
@@ -16,6 +19,7 @@
             font-size: 1.2em;
             overflow: hidden;
         }
+
         #terminal {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -42,10 +46,11 @@
               transparent 2px
             );
             animation: noise 0.2s infinite linear;
-        }
+        } 
         @keyframes noise {
             to { background-position: 100% 100%; }
         }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
