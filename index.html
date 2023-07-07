@@ -2,8 +2,6 @@
 <html>
 <head>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
-
         body {
             background-color: #1a1a1a;
             background-image: radial-gradient(rgba(255, 10, 214, 0.75), #1a1a1a 80%);
@@ -16,85 +14,140 @@
             font-family: 'Source Code Pro', monospace;
             font-size: 1.2em;
             overflow: hidden;
+            text-align: center;
+
         }
 
         #terminal {
             background-color: #000000cc;
             padding: 20px;
             width: 70%;
-            min-height: 70%;
+            height: 70%;
             border: solid 2px #FF00FF;
-            color: #FF00FF; /* Neon pink/purple */
-            text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF, 0 0 20px #FF00FF;
+            color: #ffffff;
+            text-shadow: 0 0 1px #6f6f6f, 0 0 2px #6f6f6f, 0 0 2px #969696, 0 0 1px #949494;
             position: relative;
             overflow: hidden;
+            text-align: center;
+
         }
 
-        #terminal::after {
-            content: ''; /* Insertion point character */
-            position: absolute;
-            height: 1.2em; /* Adjust this value to match your font size */
-            line-height: 1.2em; /* Adjust this value to match your font size */
-            background-color: #FF00FF; /* Same color as the text */
-            color: #000000; /* Color of the insertion point character */
-            font-size: 1em; /* Adjust this value to match your font size */
-            padding: 0 4.5px; /* Adjust padding as needed */
-            animation: cursor-blink 1s infinite;
-            box-shadow: 0 0 8px 2px #FF00FF; /* Adjust glow size and color */
+        #ascii-art {
+            white-space: pre-wrap;
+            font-size: 0.4em; 
         }
 
-        @keyframes cursor-blink {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        #footer-line, .nav-item {
+            white-space: pre-wrap;
+            font-size: 1em; 
         }
 
-        #noise {
-            pointer-events: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.03),
-                rgba(255, 255, 255, 0.03) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            animation: noise 0.2s infinite linear;
+        .nav-item {
+            display: inline-block;
+            width: 33%;
+            text-align: center;
         }
 
-        @keyframes noise {
-            to {
-                background-position: 100% 100%;
-            }
+        .selected {
+            text-decoration: underline;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
 </head>
 <body>
-    <div id="terminal"></div>
-    <div id="noise"></div>
+    <div id="terminal">
+        <pre id="ascii-art"></pre>
+        <pre id="footer-line"></pre>
+        <pre id="home" class="nav-item selected">Home</pre>
+        <pre id="projects" class="nav-item">Projects</pre>
+        <pre id="history" class="nav-item">History</pre>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
     <script>
         setTimeout(function() {
-            var typed = new Typed('#terminal', {
-                strings: ["Dear Patrons,^1000\n\nFrom the dimly lit corners of our beloved CocktailBar, we're putting pen to paper to give you a bit of an overdue recap. There's a lot to unpack, so grab a glass and settle in.^1000\n\nOur story began back in 2020, amidst the thunderous rumble of the DeFi boom. CocktailBar was initially conceived as a playful frolic amongst the new wave of financial memes. Yet, somewhere along the way, we realized we were not just stirring another meme into existence, but brewing a much more potent narrative. It was clear to us, even then, that we were on the brink of something bigger.^1000\n\nEver since, we've been eager to leap headfirst into the intoxicating world of gaming and NFTs. In an attempt to honor our original promises, we focused on developing COC and liquidity staking. What was initially meant to be a three-token farm quickly whittled down to one – our trusty Mojito, a simpler alternative, or so we thought.^1000\n\nDuring the unfolding of this chapter, we stumbled upon some glitches in our code. These inconsistencies led to disproportionate distribution of Mojito staking rewards, allowing some folks to claim more than their due share. This hiccup threw our staking logic off balance and showed us the volatile nature of this emerging world. We were still learning to navigate the treacherous currents of crypto-space, and as the saying goes, we live, and we learn.^1000\n\nDuring our hiatus, we wanted to give something back to our faithful community. Enter Peanuts, another light-hearted meme coin with simple mechanics. However, this venture too came with its share of hiccups and challenges, including an oversight in our contract and internal disagreements.^1000\n\nTaking lessons from these trials and tribulations, we decided to step back and realign our vision. We realized that what truly excited us, and what we had always wanted to do, lay in the vibrant realms of gaming and NFTs. We had always dreamt of transitioning CocktailBar into the Metaverse, and after seven months of silence, we finally made a headway into Phase One.^1000\n\nAround this time, we were approached by a representative who promised assistance with an online casino, offering recurring payouts to our token holders. However, over time, this narrative began overshadowing our other endeavors. Miscommunications ensued, promises were not met, and the situation left us dealing with a disappointed community and a vanishing partner.^1000\n\nIn spite of the setbacks, we rang in the New Year of 2022 in a distinctive fashion - by launching our VR Metaverse. While this virtual celebration was a success and sparked renewed enthusiasm within our community, the hangover of the casino saga persisted.^1000\n\nWe found ourselves in a pickle. How do we offer a rewarding experience to our token holders, continue doing what we truly love, and ensure a sustainable future for CocktailBar? And then, like a light at the end of a dark tunnel, emerged Metahunt.^1000\n\nAs we embark on this new journey, our commitment to you, our community, remains unwavering. Our mission with Metahunt is to create a platform that caters to everyone's needs while driving towards a sustainable future.^1000\n\nWe are determined to bring you engaging gaming experiences, promising NFT collections, and compelling opportunities to earn. We're working diligently on staking mechanisms for both MHNT and COC tokens that would provide our early supporters with a way to earn rewards. In addition, we're exploring how our ecosystem can continue to evolve and adapt, providing a breeding ground for further growth and new projects.^1000\n\nOur promise to you is transparency. We'll keep you updated about our plans, our progress, and our setbacks (because yes, there will be setbacks). This journey will be a roller coaster, filled with twists and turns, highs and lows, but one we promise to take together. We aren’t planning on leaving any time soon; in fact, we're just getting started.^1000\n\nAs we journey forward, we hope to learn from the past, focusing on delivering products and experiences that exceed expectations. We plan to make the staking experience rewarding and fulfilling, ensuring that all token holders can enjoy the benefits of their contributions.^1000\n\nMoreover, we intend to build more exciting projects under the umbrella of CocktailBar, transforming it into a parent entity that fosters creativity and innovation. Think of it as a hub of eclectic, enticing ventures; a concoction of various unique flavours, each adding a distinctive note to the overall taste.^1000\n\nThe rebranding and removal of CocktailBar's liquidity are no longer on the table. We've heard your concerns and decided to take a different route. We will be utilizing everything at our disposal to ensure the growth and maintenance of our ecosystem, whether that includes development funds, Peanut tokens, or more.^1000\n\nThe journey ahead won't be easy, but it will be worth it. We’re talking about late nights, early mornings, and a few too many cups of coffee. We'll strive to make our platform not only entertaining and engaging but also a place where everyone feels valued and heard.^1000\n\nRemember, every great story has a bit of drama and a lot of action, Ours has been no different, and moving forward, we promise to continue writing this tale together with you, one chapter at a time.^1000\n\nIn essence, we're shifting gears but not losing our essence. CocktailBar remains a testament to community, creativity, and the spirit of innovation. It continues to be a space for people to come together, celebrate their shared interests, and contribute to a collective vision.^1000\n\nSo, as we say in CocktailBar, the night is young and full of possibilities. Let's toast to the past, drink to the present, and raise a glass to the exciting journey that awaits us.^1000\n\nWe thank you for being a part of this journey, and we can't wait to see where this adventure takes us. Here's to a future filled with curiosity, exploration, and yes, plenty of cocktails.^1000\n\nYours in good spirits,^1000\n\nMr. Martini"],
-                typeSpeed: 30,
-                backSpeed: 0,
-                loop: false,
-                cursorChar: '',
-                contentType: 'text'
-            });
-        }, 2000); // 3 seconds delay before starting the typing animation
+            var terminal = document.getElementById('terminal');
+            var asciiArt = document.getElementById('ascii-art');
+
+            fetch('ascii-art.txt')
+                .then(response => response.text())
+                .then(ascii => {
+                    // Split the ASCII art into lines
+                    let asciiLines = ascii.split("\n");
+
+                    // Find the length of the longest line
+                    let maxLineLength = Math.max(...(asciiLines.map(line => line.length)));
+
+                    // Prepend spaces to each line to center it
+                    asciiLines = asciiLines.map(line => {
+                        let prependSpaces = ' '.repeat((maxLineLength - line.length) / 2);
+                        return prependSpaces + line;
+                    });
+
+                    // Join the lines back together into one string
+                    ascii = asciiLines.join("\n");
+
+                    ascii = ascii.replace(/\n/g, "<br>");
+                    terminal.style.display = 'block';
+
+                    var typedAscii = new Typed('#ascii-art', {
+                        strings: [ascii],
+                        typeSpeed: 0.1,
+                        backSpeed: 0,
+                        loop: false,
+                        cursorChar: '',
+                        onComplete: function(self) {
+                            var footerLine = new Typed('#footer-line', {
+                                strings: ['_________ _________ __ _ ____ ____ ___ ____ ___ ___ _____ ____ ____ ____ ____ ____ _____ _______ _____ ____ _____ ______ ___ '],
+                                typeSpeed: 5,
+                                backSpeed: 0,
+                                loop: false,
+                                cursorChar: '',
+                                onComplete: function(self) {
+                                    var typedHome = new Typed('#home', {
+                                        strings: ['Home'],
+                                        typeSpeed: 5,
+                                        backSpeed: 0,
+                                        loop: false,
+                                        cursorChar: '',
+                                        onComplete: function(self) {
+                                            var typedProjects = new Typed('#projects', {
+                                                strings: ['Projects'],
+                                                typeSpeed: 15,
+                                                backSpeed: 0,
+                                                loop: false,
+                                                cursorChar: '',
+                                                onComplete: function(self) {
+                                                    var typedHistory = new Typed('#history', {
+                                                        strings: ['History'],
+                                                        typeSpeed: 15,
+                                                        backSpeed: 0,
+                                                        loop: false,
+                                                        cursorChar: ''
+                                                    });
+
+                                                    typedHistory.start();
+                                                }
+                                            });
+
+                                            typedProjects.start();
+                                        }
+                                    });
+
+                                    typedHome.start();
+                                }
+                            });
+
+                            footerLine.start();
+                        },
+                        onStringTyped: function(pos, self) {
+                            asciiArt.innerHTML = asciiArt.innerHTML.replace(/<br>/g, "\n");
+                        }
+                    });
+
+                    typedAscii.start();
+                });
+        }, 2000);
     </script>
 </body>
 </html>
